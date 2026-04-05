@@ -8,7 +8,11 @@ body {
 
 #mainDiv {
     width: 100%;
-    height: 100%
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #loveHeart {
@@ -41,7 +45,10 @@ body {
     font-family: "sans-serif";
     width: 500px;
     font-size: 24px;
-    color: #666
+    color: #666;
+    position: absolute;
+    top: 195px;
+    left: 70px;
 }
 
 #messages {
@@ -72,13 +79,18 @@ body {
     font-size: 20px;
 }
 
+#content {
+    display: contents;
+}
+
 #clickSound {
     display: none
 }
 
 #myDiv {
-    margin-top: 10px;
-    margin-left: 10px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
     color: #333;
     font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
     font-size: 8px
@@ -148,4 +160,96 @@ body {
 
 #copyright a {
     color: #666
+}
+
+@media screen and (max-width: 768px) {
+    #mainDiv {
+        justify-content: flex-start;
+        padding-top: 20px;
+    }
+    
+    #loveHeart {
+        float: none;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    #garden {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #words {
+        width: 90%;
+        font-size: 16px;
+        left: 5% !important;
+        text-align: center;
+    }
+    
+    #elapseClock {
+        font-size: 12px;
+    }
+    
+    #elapseClock .digit {
+        font-size: 24px;
+    }
+    
+    #marriageClock {
+        font-size: 11px;
+    }
+    
+    #marriageClock .digit {
+        font-size: 18px;
+    }
+    
+    #myDiv {
+        font-size: 7px;
+    }
+    
+    #myDivTwo {
+        font-size: 7px;
+        right: 5px;
+        bottom: 5px;
+    }
+    
+    #myDiv .comments {
+        line-height: 1.4;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #loveHeart {
+        max-width: 320px;
+    }
+    
+    #words {
+        font-size: 14px;
+    }
+    
+    #elapseClock {
+        font-size: 10px;
+    }
+    
+    #elapseClock .digit {
+        font-size: 20px;
+    }
+    
+    #marriageClock {
+        font-size: 10px;
+    }
+    
+    #marriageClock .digit {
+        font-size: 16px;
+    }
+    
+    #myDiv {
+        display: none;
+    }
+    
+    #myDivTwo {
+        font-size: 6px;
+    }
 }
