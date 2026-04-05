@@ -20,8 +20,6 @@ $(function () {
 		garden.render()
 	}, Garden.options.growSpeed)
 
-	$("#myDivTwo").css("margin-top", ($window.height() - 60));
-
 });
 $(window).resize(function () {
 	var b = $(window).width();
@@ -88,7 +86,7 @@ function startHeartAnimation() {
 	}
 })(jQuery);
 
-function timeElapse(c) {
+function timeElapse(c, elementId) {
 	var e = Date();
 	var f = (Date.parse(e) - Date.parse(c)) / 1000;
 	var g = Math.floor(f / (3600 * 24));
@@ -107,7 +105,8 @@ function timeElapse(c) {
 		f = "0" + f
 	}
 	var a = '<span class="digit">' + g + '</span> days <span class="digit">' + b + '</span> hours <span class="digit">' + d + '</span> minutes <span class="digit">' + f + "</span> seconds";
-	$("#elapseClock").html(a)
+	var targetElement = elementId ? $("#" + elementId) : $("#elapseClock");
+	targetElement.html(a)
 }
 
 function showMessages() {

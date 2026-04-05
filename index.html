@@ -28,7 +28,8 @@
 	</div>
 
 	<div id="myDivTwo">
-		<div class="simply-countdown-inline"></div>
+		<span style="font-size:10px;color:#666;">Until May 10, 2026</span><br/>
+		<div class="simply-countdown-inline" id="mayCountdown"></div>
 	</div>
 	<div id="content">
 		<!-- <div id="code">
@@ -59,6 +60,7 @@
 			<div id="words">
 				<div id="messages">
 					<div id="elapseClock"></div>
+					<div id="marriageClock"></div>
 				</div>
 				<!-- <div id="loveu">
 					I labu.<br/>
@@ -80,6 +82,13 @@
 	together.setSeconds(0);
 	together.setMilliseconds(0);
 
+	var married = new Date();
+	married.setFullYear(2026, 2, 9);
+	married.setHours(0);
+	married.setMinutes(0);
+	married.setSeconds(0);
+	married.setMilliseconds(0);
+
 	if (!document.createElement('canvas').getContext) {
 		var msg = document.createElement("div");
 		msg.id = "errorMsg";
@@ -95,18 +104,20 @@
 		}, 5000);
 
 		timeElapse(together);
+		timeElapse(married, 'marriageClock');
 		setInterval(function () {
 			timeElapse(together);
+			timeElapse(married, 'marriageClock');
 		}, 500);
 
 		adjustCodePosition();
 		$("#code").typewriter();
 	}
 
-	simplyCountdown('.simply-countdown-inline', {
+	simplyCountdown('#mayCountdown', {
         year: 2026,
-        month: 3,
-        day: 5,
+        month: 5,
+        day: 10,
         inline: true
     });
 </script>
